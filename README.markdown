@@ -1,5 +1,16 @@
-# Updated Landing Page
+# Create a Landing Page 
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/Sinny91/pen/dyNRBLR](https://codepen.io/Sinny91/pen/dyNRBLR).
+<p align="center">
+  <img src="https://i.ibb.co/RzWTgNF/landing.jpg" alt="landing" width="400">
+ </p>
+
+### Aims: :dart:
+
+- Any landing page for a product or business 
+
+### Tools: :toolbox:
+
+- HTML5
+- CSS3
 
 
