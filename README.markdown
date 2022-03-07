@@ -6,11 +6,18 @@
 
 ### Aims: :dart:
 
-- Any landing page for a product or business 
+- Create a landing page for a product or business, demonstrating knowledge of HTML5 & CSS. 
 
 ### Tools: :toolbox:
 
 - HTML5
 - CSS3
+
+### Room for improvement: :balance_scale:
+
+- Create React App 
+- Use Materialise 
+- More modern UI 
+
 
 
