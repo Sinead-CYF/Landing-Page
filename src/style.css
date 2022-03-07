@@ -5,8 +5,8 @@
 }
 
 :root {
-  /*----colours----*/
 
+  /*----colours----*/
   --dark-text: #343439;
   --darker-background: #a6c7ca;
   --light-background: #c1d8da;
@@ -16,8 +16,8 @@
   --a-hover-box-shadow: rgba(50, 131, 177, 0.65);
   --btn-hover: #4d4d4d;
 
-  /*----fonts----*/
 
+  /*----fonts----*/
   --main: "Playfair Display", serif;
   --secondary: "Lato", sans-serif;
 }
@@ -51,7 +51,6 @@ section {
 }
 
 /* ---- typography ----  */
-
 h1 {
   font: 700 25px var(--main);
   text-transform: uppercase;
@@ -138,7 +137,6 @@ label:hover {
 }
 
 /* ---- hero area ----*/
-
 .hero-img {
   background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Images-HD-Book-Wallpapers.jpg");
   position: relative;
@@ -186,7 +184,6 @@ input {
 }
 
 /* ---- card area ---- */
-
 .products {
   display: flex;
   justify-content: space-around;
@@ -230,6 +227,10 @@ input {
   font: 900 1.5em var(--secondary);
 }
 
+.product-price {
+  margin-top: 0.5rem;
+}
+
 .card:hover {
   box-shadow: 2px 4px 5px 4px var(--card-box-shadow);
 }
@@ -239,7 +240,6 @@ input {
 }
 
 /* ---- video area ---- */
-
 .video-area {
   text-align: center;
 }
@@ -264,7 +264,6 @@ input {
 }
 
 /* ---- footer ----  */
-
 footer {
   background-color: var(--light-background);
   padding: 0.3em;
