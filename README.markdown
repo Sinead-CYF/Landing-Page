@@ -1,7 +1,7 @@
 # Create a Landing Page 
 
 <p align="center">
-  <img src="https://i.ibb.co/RzWTgNF/landing.jpg" alt="landing" width="400">
+  <img src="https://i.ibb.co/sH8w1ts/landing.jpg" alt="landing" width="400">
  </p>
 
 ### Aims: :dart:
