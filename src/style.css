@@ -1,4 +1,6 @@
-* {
+*, 
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -6,7 +8,7 @@
 
 :root {
 
-  /*----colours----*/
+  /*----colors----*/
   --dark-text: #343439;
   --darker-background: #a6c7ca;
   --light-background: #c1d8da;
@@ -18,7 +20,7 @@
 
 
   /*----fonts----*/
-  --main: "Playfair Display", serif;
+  --main: 'Raleway', sans-serif;
   --secondary: "Lato", sans-serif;
 }
 
@@ -64,6 +66,8 @@ h2 {
 h3 {
   margin-bottom: 1em;
   font-family: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .video-area h2 {
@@ -79,6 +83,8 @@ header {
   position: fixed;
   width: 100%;
   z-index: 10;
+  min-height: 4rem;
+ 
 }
 
 #nav-bar {
@@ -97,9 +103,13 @@ nav {
   display: block;
 }
 
+
 nav li {
   margin-bottom: 0.75em;
   list-style: none;
+  padding: 0.5rem;
+  position: relative;
+  
 }
 
 nav li:first-child {
@@ -111,11 +121,25 @@ nav li:first-child {
   color: var(--dark-text);
   font: 900 25px var(--main);
   padding: 0.1em 0.2em;
+  text-transform: uppercase;
 }
 
-.nav-link:hover {
-  background-color: var(--darker-background);
-  box-shadow: 3px 3px 3px var(--hover-box-shadow);
+nav li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 100ms ease-in;
+}
+
+nav li:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 label {
@@ -170,21 +194,25 @@ input {
   margin: 0 auto;
   display: block;
   text-transform: uppercase;
-  margin-top: 1.5em;
-  padding: 0.5em 1em;
+  margin-top: 1em;
+  padding: 0.5em 1.5em;
   background-color: var(--light-background);
   color: var(--dark-text);
   border-radius: 5px;
-  font: 900 15px var(--secondary);
+  font: 900 1em var(--main);
   cursor: pointer;
+  letter-spacing: 1.3;
 }
 
 .btn:hover {
   box-shadow: 0px 0px 0px 1px var(--btn-hover);
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
 }
 
 /* ---- card area ---- */
 .products {
+  padding: 2rem;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -193,6 +221,7 @@ input {
 .card {
   padding: 1rem;
   height: auto;
+  min-width: 300px;
   width: 46%;
   display: flex;
   flex-direction: column;
@@ -222,9 +251,9 @@ input {
   padding: 0.3em 0.5em;
   border-radius: 5px;
   text-transform: uppercase;
-  width: 100%;
   display: inline-block;
   font: 900 1.5em var(--secondary);
+  margin-top: 0.5rem;
 }
 
 .product-price {
@@ -244,18 +273,21 @@ input {
   text-align: center;
 }
 
-.video-container {
+.video-wrapper {
+  min-width: 300px;
   max-width: 45%;
   margin: 0 auto;
 }
 
-.video-wrapper {
+.embed-container {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
+  overflow: hidden;
+  max-width: 100%;
 }
 
-.video-wrapper iframe {
+.embed-container iframe, .embed-container object, .embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -263,24 +295,50 @@ input {
   height: 100%;
 }
 
+
+
 /* ---- footer ----  */
+
 footer {
   background-color: var(--light-background);
-  padding: 0.3em;
-}
-
-.footer-wrap {
-  margin: 0 auto;
-  justify-content: flex-end;
+  font-family: var(--main);
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 footer ul {
+  width: 100%;
   list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer li {
+  width: fit-content;
+  position: relative;
+}
+
+footer li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 100ms ease-in;
+}
+
+footer li:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 .footer-item {
-  margin-top: 1em;
-  margin-right: 1em;
   text-decoration: none;
   list-style-type: none;
   font-weight: bold;
@@ -288,11 +346,13 @@ footer ul {
 }
 
 .copyright {
-  display: block;
-  text-align: right;
+  text-align: center;
   color: var(--dark-text);
-  padding: 1em;
+  align-self: center;
 }
+
+
+
 
 @media screen and (min-width: 860px) {
   h1 {
@@ -321,22 +381,37 @@ footer ul {
     position: static;
     display: flex;
     align-items: center;
-    margin-right: 3em;
   }
 
   nav li:first-child {
     margin-top: 0em;
   }
 
-  .nav-link {
-    margin-left: 2em;
+  nav li {
+    margin-bottom: 0;
   }
 
+ ul {
+  margin-right: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+ }
+
+ li {
+  align-self: center;
+ }
+
   .card {
-    width: 22%;
+    width: 20%;
   }
 
   .video-heading {
     font-size: 2.5em;
+  }
+
+  footer ul {
+    justify-content: center;
   }
 }

@@ -121,16 +121,18 @@ nav li:first-child {
 
 label {
   margin: 0.5rem;
-  font-size: 25px;
+  font-size: 40px;
+ 
 }
 
-label:hover {
+/* label:hover {
   background-color: var(--darker-background);
   box-shadow: 3px 3px 3px var(--hover-box-shadow);
-}
+} */
 
 .nav-toggle {
   display: inline-block;
+  cursor: pointer;
 }
 
 #toggle {
@@ -263,6 +265,7 @@ input {
   height: 100%;
 }
 
+
 /* ---- footer ----  */
 
 footer {
@@ -322,7 +325,7 @@ footer ul {
     position: static;
     display: flex;
     align-items: center;
-    margin-right: 3em;
+    /* margin-right: 3em; */
   }
 
   nav li:first-child {
